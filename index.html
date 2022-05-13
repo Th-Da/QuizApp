@@ -6,30 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-secondary">
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                class="d-inline-block align-top" alt="">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             QuizApp
         </a>
     </nav>
 
     <div class="container">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card mb-3 quiz-card">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="img/brainbg.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Frage</h5>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <span>
+                                <b>1</b> von <b>5</b> Fragen
+                            </span>
+                            <button class="btn btn-primary">Nächste Frage</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
+
+
 
 </body>
 

@@ -2,10 +2,37 @@ body {
     background-color: rgb(254, 250, 239) !important;
 }
 
+.navbar {
+    height: 10vh;
+}
+
+.navbar img {
+    object-fit: cover;
+    margin-left: 2rem;
+}
+
 .container {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80vw;;
 }
 
+.quiz-card {
+    width: 60rem;
+}
+
+.card-body {
+    margin-left: 5rem;
+}
+
+.quiz-card img {
+    height: 24rem;
+    width: 24rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
