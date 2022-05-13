@@ -7,9 +7,10 @@
     <title>QuizApp</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
 
     <nav class="navbar navbar-light bg-secondary">
         <a class="navbar-brand" href="#">
@@ -26,34 +27,34 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Frage</h5>
+                        <h5 class="card-title" id="questionText">Frage</h5>
                         <div class="card mb-2">
-                            <div class="card-body">
+                            <div class="card-body" id="answer1">
                                 Antwort.
                             </div>
                         </div>
 
                         <div class="card mb-2">
-                            <div class="card-body">
+                            <div class="card-body" id="answer2">
                                 Antwort.
                             </div>
                         </div>
 
                         <div class="card mb-2">
-                            <div class="card-body">
+                            <div class="card-body" id="answer3">
                                 Antwort.
                             </div>
                         </div>
 
                         <div class="card mb-2">
-                            <div class="card-body">
+                            <div class="card-body" id="answer4">
                                 Antwort.
                             </div>
                         </div>
 
                         <div class="card-footer">
                             <span>
-                                <b>1</b> von <b>5</b> Fragen
+                                <b>1</b> von <b id="allQuestions">5</b> Fragen
                             </span>
                             <button class="btn btn-primary">Nächste Frage</button>
                         </div>

@@ -48,3 +48,23 @@ let questions = [
         "rightAnswer": 4
     }
 ];
+
+let currentQuestion = 0;
+
+function init() {
+    let allQuestions = document.getElementById('allQuestions').innerHTML = questions.length;;
+    showQuestion();
+}
+
+function showQuestion() {
+    let current = questions[currentQuestion];
+    document.getElementById('questionText').innerHTML = current['question'];
+    document.getElementById('answer1').innerHTML = current['answer1'];
+    document.getElementById('answer2').innerHTML = current['answer2'];
+    document.getElementById('answer3').innerHTML = current['answer3'];
+    document.getElementById('answer4').innerHTML = current['answer4'];
+    
+
+
+
+}
