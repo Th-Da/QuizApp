@@ -28,26 +28,26 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title" id="questionText">Frage</h5>
-                        <div class="card mb-2">
-                            <div class="card-body" id="answer1">
+                        <div class="card mb-2  hover">
+                            <div class="card-body answer-box" id="answer1" onclick="answer('answer1')">
                                 Antwort.
                             </div>
                         </div>
 
-                        <div class="card mb-2">
-                            <div class="card-body" id="answer2">
+                        <div class="card mb-2 hover">
+                            <div class="card-body answer-box" id="answer2" onclick="answer('answer2')">
                                 Antwort.
                             </div>
                         </div>
 
-                        <div class="card mb-2">
-                            <div class="card-body" id="answer3">
+                        <div class="card mb-2 hover">
+                            <div class="card-body answer-box" id="answer3" onclick="answer('answer3')">
                                 Antwort.
                             </div>
                         </div>
 
-                        <div class="card mb-2">
-                            <div class="card-body" id="answer4">
+                        <div class="card mb-2 hover">
+                            <div class="card-body answer-box" id="answer4" onclick="answer('answer4')">
                                 Antwort.
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <span>
                                 <b>1</b> von <b id="allQuestions">5</b> Fragen
                             </span>
-                            <button class="btn btn-primary">Nächste Frage</button>
+                            <button class="btn btn-primary" id="buttonNext" onclick="nextQuestion()" disabled>Nächste Frage</button>
                         </div>
                     </div>
                 </div>
