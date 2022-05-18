@@ -12,18 +12,15 @@
 
 <body onload="init()">
 
-    <nav class="navbar navbar-light bg-secondary">
-        <a class="navbar-brand" href="#">
-            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            QuizApp
-        </a>
-    </nav>
-
     <div class="container">
         <div class="card mb-3 quiz-card">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="img/brainbg.jpg" class="card-img" alt="...">
+            <div class="row no-gutters quiz-card-child">
+                <div class="col-md-4 card-left">
+                    <img src="img/logo.png" class="card-img" alt="...">
+                    <div class="card-left-txt">
+                        <h4>Willkommen zum Quiz!</h4>
+                        <h5>Kannst du alle Fragen beantworten?</h5>
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -54,9 +51,10 @@
 
                         <div class="card-footer">
                             <span>
-                                <b>1</b> von <b id="allQuestions">5</b> Fragen
+                                <b id="currentQuestion">1</b> von <b id="allQuestions">5</b> Fragen
                             </span>
-                            <button class="btn btn-primary" id="buttonNext" onclick="nextQuestion()" disabled>Nächste Frage</button>
+                            <button class="btn btn-primary" id="buttonNext" onclick="nextQuestion()" disabled>Nächste
+                                Frage</button>
                         </div>
                     </div>
                 </div>

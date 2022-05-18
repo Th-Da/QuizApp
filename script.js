@@ -29,7 +29,7 @@ let questions = [
         "answer2": "max",
         "answer3": "from",
         "answer4": "spellcheck",
-        "rightAnswer": 1 
+        "rightAnswer": 1
     },
     {
         "question": "Wie wählst du alle Elemente vom Typ &lt;a&gt; mit dem Attribut title aus?",
@@ -37,7 +37,7 @@ let questions = [
         "answer2": "a > title {...}",
         "answer3": "a.title {...}",
         "answer4": "a=title {...}",
-        "rightAnswer": 1  
+        "rightAnswer": 1
     },
     {
         "question": "Wie definiert man in JavaScript eine Variable?",
@@ -57,12 +57,16 @@ function init() {
 }
 
 function showQuestion() {
-    let current = questions[currentQuestion];
-    document.getElementById('questionText').innerHTML = current['question'];
-    document.getElementById('answer1').innerHTML = current['answer1'];
-    document.getElementById('answer2').innerHTML = current['answer2'];
-    document.getElementById('answer3').innerHTML = current['answer3'];
-    document.getElementById('answer4').innerHTML = current['answer4'];
+    if (current >= questions) {
+
+    } else {
+        let current = questions[currentQuestion];
+        document.getElementById('questionText').innerHTML = current['question'];
+        document.getElementById('answer1').innerHTML = current['answer1'];
+        document.getElementById('answer2').innerHTML = current['answer2'];
+        document.getElementById('answer3').innerHTML = current['answer3'];
+        document.getElementById('answer4').innerHTML = current['answer4'];
+    }
 }
 
 function answer(answer) {
@@ -79,6 +83,21 @@ function answer(answer) {
     document.getElementById('buttonNext').disabled = false;
 }
 
-function nextQuestion() [
-    
-]
+function nextQuestion() {
+    currentQuestion++;
+    resetAnswerButtons();
+    document.getElementById('buttonNext').disabled = true;
+    showQuestion();
+    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
+}
+
+function resetAnswerButtons() {
+    document.getElementById('answer1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer4').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer4').parentNode.classList.remove('bg-success');
+}
