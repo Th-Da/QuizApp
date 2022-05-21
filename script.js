@@ -52,21 +52,36 @@ let questions = [
 let currentQuestion = 0;
 
 function init() {
+    currentQuestion = 0;
     let allQuestions = document.getElementById('allQuestions').innerHTML = questions.length;;
     showQuestion();
 }
 
 function showQuestion() {
-    if (current >= questions) {
+    if (currentQuestion >= questions.length) {
+        endOfQuizz();
 
     } else {
-        let current = questions[currentQuestion];
-        document.getElementById('questionText').innerHTML = current['question'];
-        document.getElementById('answer1').innerHTML = current['answer1'];
-        document.getElementById('answer2').innerHTML = current['answer2'];
-        document.getElementById('answer3').innerHTML = current['answer3'];
-        document.getElementById('answer4').innerHTML = current['answer4'];
+        renderNextQuestion();
     }
+}
+
+function renderNextQuestion() {
+    let current = questions[currentQuestion];
+    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
+    document.getElementById('endscreen').style = 'display: none';
+    document.getElementById('cardRight').style = ``;
+    document.getElementById('questionText').innerHTML = current['question'];
+    document.getElementById('answer1').innerHTML = current['answer1'];
+    document.getElementById('answer2').innerHTML = current['answer2'];
+    document.getElementById('answer3').innerHTML = current['answer3'];
+    document.getElementById('answer4').innerHTML = current['answer4'];
+}
+
+function endOfQuizz() {
+    document.getElementById('cardRight').style = 'display: none';
+    document.getElementById('endscreen').style = ``;
+    document.getElementById('cardLeft').innerHTML += generateButtonHTML();
 }
 
 function answer(answer) {
@@ -100,4 +115,17 @@ function resetAnswerButtons() {
     document.getElementById('answer2').parentNode.classList.remove('bg-success');
     document.getElementById('answer3').parentNode.classList.remove('bg-success');
     document.getElementById('answer4').parentNode.classList.remove('bg-success');
+}
+
+function startAgain() {
+    document.getElementById('buttonContainer').outerHTML= ``;
+    init();
+}
+
+
+function generateButtonHTML() {
+return /* html */ ` <div class="btn btn-success" id="buttonContainer">
+                        <button type="button" class="btn btn-success" id="startAgainButton" onclick="startAgain()">Neue Runde</button>
+                    </div>
+                    `;
 }

@@ -15,14 +15,14 @@
     <div class="container">
         <div class="card mb-3 quiz-card">
             <div class="row no-gutters quiz-card-child">
-                <div class="col-md-4 card-left">
+                <div class="col-md-4 card-left" id="cardLeft">
                     <img src="img/logo.png" class="card-img" alt="...">
                     <div class="card-left-txt">
                         <h4>Willkommen zum Quiz!</h4>
                         <h5>Kannst du alle Fragen beantworten?</h5>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8" id="cardRight" >
                     <div class="card-body">
                         <h5 class="card-title" id="questionText">Frage</h5>
                         <div class="card mb-2  hover">
@@ -57,6 +57,11 @@
                                 Frage</button>
                         </div>
                     </div>
+                </div>
+                <div class="endscreen col-md-8" id="endscreen" style="display: none;" >
+                    <h2 class="endscreen-top-child">Quiz beendet!</h3>
+                    <img src="img/trophy.png" alt="" >
+                    <p>Du hast <span>2</span> von <span>5</span> Fragen richtig beantwortet.</p>
                 </div>
             </div>
         </div>
