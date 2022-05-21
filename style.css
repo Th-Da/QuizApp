@@ -58,7 +58,9 @@ body {
 
 .card-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 8rem;
 }
 
 .bg-danger, .bg-success {
@@ -80,6 +82,10 @@ body {
     width: inherit;
 }
 
+.progress {
+    width: 100%;
+}
+
 
 @media (max-width: 768px) {
 
@@ -94,8 +100,8 @@ body {
 
     .quiz-card img {
         margin: 2rem 0;
-        height: 13rem;
-        width: 15rem;
+        height: 8rem;
+        width: 10rem;
     }
 
     .container, .container-sm {
@@ -118,9 +124,7 @@ body {
         border-radius: 0;
     }
 
-    .col-md-8 {
-
-    }
+    .col-md-8 {}
 
     .card-left {
         border-radius: 0;

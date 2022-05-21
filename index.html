@@ -55,13 +55,20 @@
                             </span>
                             <button class="btn btn-primary" id="buttonNext" onclick="nextQuestion()" disabled>Nächste
                                 Frage</button>
+                                <div class="progress">
+                                    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                  </div>
                         </div>
                     </div>
                 </div>
                 <div class="endscreen col-md-8" id="endscreen" style="display: none;" >
                     <h2 class="endscreen-top-child">Quiz beendet!</h3>
                     <img src="img/trophy.png" alt="" >
-                    <p>Du hast <span>2</span> von <span>5</span> Fragen richtig beantwortet.</p>
+                    <p>Du hast <b id="correctAnswers">2</b> von <b id="allQuestionsEndscreen">5</b> Fragen richtig beantwortet.</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                      </div>
+
                 </div>
             </div>
         </div>
