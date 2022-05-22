@@ -101,6 +101,7 @@ function endOfQuiz() {
     document.getElementById('allQuestionsEndscreen').innerHTML = questions.length;
     document.getElementById('correctAnswers').innerHTML = correctAnswers;
     document.getElementById('cardLeft').innerHTML += generateButtonHTML();
+    AUDIO_END.volume = 0.3;
     AUDIO_END.play();
 }
 
@@ -112,10 +113,12 @@ function answer(answer) {
         console.log('right');
         document.getElementById(answer).parentNode.classList.add('bg-success');
         correctAnswers ++;
+        AUDIO_SUCCESS.volume = 0.3;
         AUDIO_SUCCESS.play();
     } else {
         document.getElementById(answer).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        AUDIO_FAIL.volume = 0.3;
         AUDIO_FAIL.play();
     }
     document.getElementById('buttonNext').disabled = false;
