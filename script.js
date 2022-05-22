@@ -109,19 +109,38 @@ function answer(answer) {
     let rightAnswer = questions[currentQuestion]['rightAnswer'];
     let selectedAnswer = answer.slice(-1);
     let idOfRightAnswer = `answer${rightAnswer}`
-    if (selectedAnswer == rightAnswer) {
-        console.log('right');
-        document.getElementById(answer).parentNode.classList.add('bg-success');
-        correctAnswers ++;
-        AUDIO_SUCCESS.volume = 0.3;
-        AUDIO_SUCCESS.play();
+    if (theAnswerIsCorrect(selectedAnswer, rightAnswer)) {
+        correctAnswer(answer);
     } else {
-        document.getElementById(answer).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
-        AUDIO_FAIL.volume = 0.3;
-        AUDIO_FAIL.play();
+        wrongAnswer(answer, idOfRightAnswer);
+    }   
+    lockAnswers();
+}
+
+function theAnswerIsCorrect(selectedAnswer, rightAnswer) {
+    return selectedAnswer == rightAnswer;
+}
+
+function correctAnswer(answer) {
+    document.getElementById(answer).parentNode.classList.add('bg-success');
+    correctAnswers++;
+    AUDIO_SUCCESS.volume = 0.3;
+    AUDIO_SUCCESS.play();
+}
+
+function wrongAnswer(answer, idOfRightAnswer) {
+    document.getElementById(answer).parentNode.classList.add('bg-danger');
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    AUDIO_FAIL.volume = 0.3;
+    AUDIO_FAIL.play();
+}
+
+function lockAnswers(){
+    const answerBoxes = document.querySelectorAll('[id^="answer"]') //jquerry
+    for (let i = 0; i < answerBoxes.length; i++) {
+        const answer = answerBoxes[i];
+        answer.parentNode.classList.add('disabled');
     }
-    
     document.getElementById('buttonNext').disabled = false;
 }
 
@@ -138,6 +157,7 @@ function resetAnswerButtons() {
         const element = $(`answer${index}`);
         element.parentNode.classList.remove('bg-danger');
         element.parentNode.classList.remove('bg-success');
+        element.parentNode.classList.remove('disabled');
     }
 }
 
@@ -146,13 +166,13 @@ function $(id) {
 }
 
 function startAgain() {
-    document.getElementById('buttonContainer').outerHTML= ``;
+    document.getElementById('buttonContainer').outerHTML = ``;
     init();
 }
 
 
 function generateButtonHTML() {
-return /* html */ ` <div class="btn btn-success" id="buttonContainer">
+    return /* html */ ` <div class="btn btn-success" id="buttonContainer">
                         <button type="button" class="btn btn-success" id="startAgainButton" onclick="startAgain()">Neue Runde</button>
                     </div>
                     `;
