@@ -121,6 +121,7 @@ function answer(answer) {
         AUDIO_FAIL.volume = 0.3;
         AUDIO_FAIL.play();
     }
+    
     document.getElementById('buttonNext').disabled = false;
 }
 
@@ -133,14 +134,15 @@ function nextQuestion() {
 }
 
 function resetAnswerButtons() {
-    document.getElementById('answer1').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer2').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer3').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer4').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer1').parentNode.classList.remove('bg-success');
-    document.getElementById('answer2').parentNode.classList.remove('bg-success');
-    document.getElementById('answer3').parentNode.classList.remove('bg-success');
-    document.getElementById('answer4').parentNode.classList.remove('bg-success');
+    for (let index = 1; index < questions.length - 1; index++) {
+        const element = $(`answer${index}`);
+        element.parentNode.classList.remove('bg-danger');
+        element.parentNode.classList.remove('bg-success');
+    }
+}
+
+function $(id) {
+    return document.getElementById(id);
 }
 
 function startAgain() {
